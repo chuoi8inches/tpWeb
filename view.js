@@ -23,9 +23,6 @@ Rectangle.prototype.paint = function(ctx) {
     //console.log(this.getForms());
     ctx.fillStyle = '#F0F0F0'; // set canvas' background color
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    this.getForms().forEach(function (eltDuTableau) {
-      // now fill the canvas
-      eltDuTableau.paint(ctx);
-    });
+    this.shapeTab.forEach(element => element.paint(ctx))
   };
   

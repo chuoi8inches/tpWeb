@@ -2,7 +2,7 @@
 // Implémenter ici les 4 classes du modèle.
 // N'oubliez pas l'héritage !
 function Drawing(){
-    var shapeTab = Array()
+    this.shapeTab = new Map()
 }
 function Shape(thickness,color){
     this.color = color

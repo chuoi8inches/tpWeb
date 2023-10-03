@@ -17,18 +17,14 @@ function Pencil(ctx, drawing, canvas) {
 	}.bind(this)
 	this.onInteractionUpdate = function(dnd){
 		this.currentShape = new Rectangle(dnd.xInit,dnd.yInit,
+			dnd.xFin - dnd.xInit,
 			dnd.yFin - dnd.yInit,
-			dnd.xInit - dnd.yInit,
 			this.currLineWidth,this.currColour)
 		drawing.paint(ctx,canvas)
 		this.currentShape.paint(ctx)
 	}.bind(this)
 	this.onInteractionEnd = function(dnd){
-		this.currentShape = new Rectangle()
-		this.currentShape = new Rectangle(dnd.xInit,dnd.yInit,
-			dnd.yFin - dnd.yInit,
-			dnd.xInit - dnd.yInit,
-			this.currLineWidth,this.currColour)
+		drawing.shapeTab.add(this.currentShape)
 		drawing.paint(ctx,canvas)
 		this.currentShape.paint(ctx)
 	}.bind(this)

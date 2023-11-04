@@ -14,7 +14,7 @@ Rectangle.prototype.paint = function(ctx) {
     ctx.strokeStyle = this.color
     ctx.lineWidth = this.thickness
     ctx.beginPath();
-    ctx.moveTo(this.startX, this.startY);
+    ctx.moveTo(this.upleftCornerX, this.upleftCornerY);
     ctx.lineTo(this.endX, this.endY);
     ctx.stroke();
   };
@@ -25,4 +25,12 @@ Rectangle.prototype.paint = function(ctx) {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     this.shapeTab.forEach(element => element.paint(ctx))
   };
+
+function toDom(shape, index) {
+    return "";
+}
+
+function updateShapeList(index, shape){
+      document.getElementById('shapeList').insertAdjacentHTML('beforeend',toDom(shape,index))
+  }
   

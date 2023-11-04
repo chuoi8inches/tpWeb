@@ -11,8 +11,8 @@ function Shape(upleftCornerX, upleftCornerY,color, thickness){
     this.upleftCornerX = upleftCornerX
     this.upleftCornerY =upleftCornerY
 }
-function Rectangle(upleftCornerX, upleftCornerY, width, height, thickness, color) {
-    Shape.call(this,upleftCornerX, upleftCornerY,thickness,color)
+function Rectangle(upleftCornerX, upleftCornerY, width, height,color,thickness) {
+    Shape.call(this,upleftCornerX, upleftCornerY,color,thickness)
     this.width = width
     this.height = height
 
@@ -22,4 +22,5 @@ function Line(upleftCornerX, upleftCornerY, endX, endY,color,thickness) {
     this.endX = endX
     this.endY =endY
 }
+
 
